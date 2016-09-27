@@ -1,0 +1,22 @@
+create_fibo <- function(start1,start2){
+  result <- start1
+  result[2] <-start2
+  
+  for(i in start1:4000000)
+  {
+    temp <- result[i] + result[i + 1]
+    if((temp < 4000000))
+    {
+      result[2+i] <- temp
+    }
+    else
+    {
+      break
+    }
+  }
+  return(result)
+}
+
+temp1 <- create_fibo(1,2)
+even_of_temp1 <- temp1[temp1 %% 2 == 0]
+sum(even_of_temp1)
