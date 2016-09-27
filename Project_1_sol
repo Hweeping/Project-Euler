@@ -1,0 +1,5 @@
+input <- 1:999
+multiples_of_3 <- input[input %% 3 == 0]
+multiples_of_5 <- input[input %% 5 == 0]
+ans <- union(multiples_of_3,multiples_of_5)
+sum(ans)
