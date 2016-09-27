@@ -1,0 +1,3 @@
+library(gmp)
+
+largest_prime_factor <- max(as.integer(factorize(600851475143)))
