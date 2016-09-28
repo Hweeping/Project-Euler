@@ -1,0 +1,19 @@
+i <- 1
+ans <- list()
+
+for(x in 999:101)
+{
+  for(y in 999:101)
+  {
+    a <- x * y
+    m <- as.numeric(strsplit(as.character(a), "")[[1]])
+    if(all(m == rev(m)))
+    {
+      print(a)
+      ans[[i]] <- a
+      i <- i + 1
+    }
+  }
+}
+
+max(unlist(ans[]))
