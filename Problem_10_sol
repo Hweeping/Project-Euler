@@ -1,0 +1,24 @@
+prime_list <- function(x) {
+  if (x <= 1) {
+    primes <- numeric(0)
+  }
+  if (x == 2 | x == 3) {
+    primes <- 2:x
+  }
+  else {
+    numbers <- 2:x
+    sieve <- rep(TRUE, times = x - 1)
+    cross.limit <- floor(sqrt(x))
+    count <- 1   
+    p <- numbers[sieve][count]
+    while (p <= cross.limit) {
+      sieve[p * (2:floor(x / p)) - 1] <- FALSE
+      count <- count + 1
+      p <- numbers[sieve][count]
+    }   
+    primes <- numbers[sieve]
+  }
+  return(primes)
+}
+result <- sum(as.numeric(prime_list(2e6)))
+result
