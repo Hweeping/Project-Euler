@@ -1,0 +1,19 @@
+pythagorean_triplet <- function(x)
+{
+  for (i in c(1:333))
+  {
+    for( j in c(334:667))
+    {
+      a <- i + j + sqrt(i^2 + j^2)
+      print(a)
+      if(a == x)
+      {
+        return(i * j * sqrt(i^2 + j^2))
+        break
+      }
+    }
+  }
+}
+
+y <- pythagorean_triplet(1000)
+y
