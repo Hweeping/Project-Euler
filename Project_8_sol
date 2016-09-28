@@ -1,0 +1,40 @@
+temp <- scan("1000_digit.txt", what = "")
+temp <- paste(temp, collapse = "")
+num <- strsplit(temp,split = "")
+num_list <- as.numeric(unlist(num))
+
+all <- list()
+
+for( i in 1:987 )
+{
+  print(paste("i = ",i))
+  for( j in 1:12)
+  {
+    if(j == 1)
+    {
+      print(paste("j = ",j))
+      x <- num_list[i] * num_list[i + j]
+    }
+    else
+    {
+      x <- x * num_list[i + j]
+    }
+  }
+  all[i] <- x
+  print(x)
+  if(i == 1)
+  {
+    prev <- x
+  }
+  else
+  {
+    if(x > prev)
+    {
+      prev <- x
+    }
+  }
+  x <- 0
+}
+
+prev
+
