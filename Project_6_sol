@@ -1,0 +1,21 @@
+sum_of_squares <- function(){
+  x <- 0
+  for( i in 1:100 )
+  {
+    x <- x + (i * i)
+  }
+  return(x)
+}
+
+square_of_sum <- function()
+{
+  y <- 0
+  for( i in 1:100 )
+  {
+    y <- y + i
+  }
+  return(y * y)
+}
+
+z <- square_of_sum() - sum_of_squares()
+z
