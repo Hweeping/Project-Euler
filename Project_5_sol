@@ -1,0 +1,28 @@
+even_div <- function (x){
+  y <- 0
+  
+  for( i in 1:20 )
+  {
+    if(x %% i == 0)
+    {
+      y <- y + 1
+    }
+  } 
+  if(y == 20)
+  {
+    return(TRUE)
+  }
+  else
+  {
+    return(FALSE)
+  }
+}
+
+for(i in 232792559:1000000000)
+{
+  if(even_div(i))
+  {
+    break
+  }
+}
+i
